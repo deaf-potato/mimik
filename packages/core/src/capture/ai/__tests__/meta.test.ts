@@ -254,14 +254,14 @@ describe('guide meta prompt', () => {
   });
 
   it('gives the model examples in the configured language', async () => {
-    const prompt = await promptFor('fr');
-    expect(prompt).toContain('Configurer les notifications Slack');
+    const prompt = await promptFor('pl');
+    expect(prompt).toContain('Konfiguracja powiadomień Slack');
     expect(prompt).not.toContain('Configure Slack Notification Preferences');
   });
 
   it('follows the description language, not the UI language', async () => {
-    const prompt = await promptFor('de');
-    expect(prompt).toContain('Spesenabrechnung in Workday einreichen');
+    const prompt = await promptFor('pl');
+    expect(prompt).toContain('Wysłanie raportu wydatków w Workday');
   });
 
   it('does not let step text act as a replacement pattern', async () => {

@@ -74,12 +74,7 @@ export type RewritePreset = keyof typeof REWRITE_PRESETS;
 
 export const AI_LANGUAGES = [
   { code: 'en', label: 'English' },
-  { code: 'zh-CN', label: '中文' },
-  { code: 'es', label: 'Español' },
-  { code: 'pt-BR', label: 'Português (Brasil)' },
-  { code: 'fr', label: 'Français' },
-  { code: 'de', label: 'Deutsch' },
-  { code: 'ru', label: 'Русский' },
+  { code: 'pl', label: 'Polski' },
 ] as const;
 
 export type AILanguageCode = (typeof AI_LANGUAGES)[number]['code'];
@@ -88,6 +83,7 @@ import { resolveByLocale } from './locale';
 
 const LANGUAGE_NAMES: Record<string, string> = {
   es: 'Spanish',
+  pl: 'Polish',
   fr: 'French',
   pt: 'Brazilian Portuguese',
   de: 'German',
@@ -97,12 +93,7 @@ const LANGUAGE_NAMES: Record<string, string> = {
 };
 
 const LANGUAGE_INSTRUCTIONS: Record<Exclude<AILanguageCode, 'en'>, string> = {
-  es: '\nIMPORTANTE: escribe el resultado en español. No traduzcas los nombres de botones, campos ni páginas.',
-  fr: '\nIMPORTANT : rédige le résultat en français. Ne traduis pas les noms de boutons, de champs ni de pages.',
-  'pt-BR': '\nIMPORTANTE: escreva o resultado em português do Brasil. Não traduza nomes de botões, campos ou páginas.',
-  de: '\nWICHTIG: Schreibe die Ausgabe auf Deutsch. Übersetze keine Schaltflächen-, Feld- oder Seitennamen.',
-  'zh-CN': '\n重要：请用中文输出。不要翻译按钮、字段和页面的名称。',
-  ru: '\nВАЖНО: пиши результат на русском языке. Не переводи названия кнопок, полей и страниц.',
+  pl: '\nWAŻNE: napisz wynik po polsku, w trybie rozkazującym (np. Kliknij, Wpisz, Wybierz). Nie tłumacz nazw przycisków, pól ani stron.',
 };
 
 export function getLanguageSuffix(locale: string): string {

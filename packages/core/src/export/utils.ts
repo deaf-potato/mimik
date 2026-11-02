@@ -64,12 +64,7 @@ export function extractDomain(steps: Step[]): string | null {
 
 const LOCALE_MAP: Record<string, string> = {
   en: 'en-US',
-  es: 'es',
-  'pt-BR': 'pt-BR',
-  fr: 'fr',
-  de: 'de-DE',
-  ru: 'ru-RU',
-  'zh-CN': 'zh-CN',
+  pl: 'pl-PL',
 };
 
 export function formatDate(timestamp: number): string {

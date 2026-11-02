@@ -55,12 +55,7 @@ const CODES = AI_LANGUAGES.map((l) => l.code) as readonly AILanguageCode[];
 
 const EXPECTED: Record<AILanguageCode, { step: string; title: string }> = {
   en: { step: 'Click the Submit button', title: 'Configure Slack Notification Preferences' },
-  es: { step: 'Hacer clic en el botón Submit', title: 'Configurar las notificaciones de Slack' },
-  fr: { step: 'Cliquer sur le bouton Submit', title: 'Configurer les notifications Slack' },
-  de: { step: 'Auf die Schaltfläche Submit klicken', title: 'Slack-Benachrichtigungen konfigurieren' },
-  'pt-BR': { step: 'Clicar no botão Submit', title: 'Configurar as notificações do Slack' },
-  'zh-CN': { step: '点击 Submit 按钮', title: '配置 Slack 通知偏好' },
-  ru: { step: 'Нажать кнопку Submit', title: 'Настройка уведомлений Slack' },
+  pl: { step: 'Kliknąć przycisk Submit', title: 'Konfiguracja powiadomień Slack' },
 };
 
 describe.each(CODES)('rendered prompts for %s', (code) => {

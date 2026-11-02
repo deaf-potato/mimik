@@ -3,13 +3,13 @@ import { appLocale } from '../app-locale';
 
 describe('appLocale', () => {
   it('takes the language picked in settings', () => {
-    expect(appLocale('de', 'en-US')).toBe('de');
+    expect(appLocale('pl', 'en-US')).toBe('pl');
   });
 
   it('follows the system when nothing or an unknown language is picked', () => {
-    expect(appLocale(null, 'fr-CA')).toBe('fr');
-    expect(appLocale('system', 'zh-CN')).toBe('zh-CN');
-    expect(appLocale(undefined, 'pt-PT')).toBe('pt-BR');
+    expect(appLocale(null, 'pl-PL')).toBe('pl');
+    expect(appLocale('system', 'pl')).toBe('pl');
+    expect(appLocale(undefined, 'en-GB')).toBe('en');
   });
 
   it('falls back to English for a language Mimik does not ship', () => {

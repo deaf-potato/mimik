@@ -25,28 +25,12 @@ describe('getLanguageSuffix', () => {
     expect(getLanguageSuffix('en-US')).toBe('');
   });
 
-  it('writes the Spanish instruction in Spanish', () => {
-    expect(getLanguageSuffix('es')).toContain('en español');
-  });
-
-  it('writes the French instruction in French', () => {
-    expect(getLanguageSuffix('fr')).toContain('en français');
-  });
-
-  it('writes the Chinese instruction in Chinese', () => {
-    expect(getLanguageSuffix('zh-CN')).toContain('请用中文输出');
-  });
-
-  it('writes the Brazilian Portuguese instruction in Portuguese', () => {
-    expect(getLanguageSuffix('pt-BR')).toContain('português do Brasil');
-  });
-
-  it('writes the Russian instruction in Russian', () => {
-    expect(getLanguageSuffix('ru')).toContain('на русском языке');
+  it('writes the Polish instruction in Polish', () => {
+    expect(getLanguageSuffix('pl')).toContain('po polsku');
   });
 
   it('matches a regional locale to its base language', () => {
-    expect(getLanguageSuffix('fr-CA')).toBe(getLanguageSuffix('fr'));
+    expect(getLanguageSuffix('pl-PL')).toBe(getLanguageSuffix('pl'));
   });
 
   it('falls back to the English instruction and the locale code for unknown languages', () => {
@@ -62,32 +46,23 @@ describe('getLanguageSuffix', () => {
     }
   });
 
-  it('writes the German instruction in German', () => {
-    expect(getLanguageSuffix('de')).toContain('auf Deutsch');
-  });
-
   it('tells every language to leave UI labels alone', () => {
-    expect(getLanguageSuffix('es')).toContain('No traduzcas');
-    expect(getLanguageSuffix('de')).toContain('Übersetze keine');
+    expect(getLanguageSuffix('pl')).toContain('Nie tłumacz');
     expect(getLanguageSuffix('sv')).toContain('Never translate');
   });
 });
 
 describe('AI_LANGUAGES', () => {
-  it('has 7 supported languages', () => {
-    expect(AI_LANGUAGES).toHaveLength(7);
+  it('has 2 supported languages', () => {
+    expect(AI_LANGUAGES).toHaveLength(2);
   });
 
   it('includes English as first entry', () => {
     expect(AI_LANGUAGES[0]).toEqual({ code: 'en', label: 'English' });
   });
 
-  it('includes Simplified Chinese', () => {
-    expect(AI_LANGUAGES).toContainEqual({ code: 'zh-CN', label: '中文' });
-  });
-
-  it('includes Russian', () => {
-    expect(AI_LANGUAGES).toContainEqual({ code: 'ru', label: 'Русский' });
+  it('includes Polish', () => {
+    expect(AI_LANGUAGES).toContainEqual({ code: 'pl', label: 'Polski' });
   });
 
   it('each entry has code and label', () => {

@@ -44,13 +44,13 @@ describe('getAIDescription', () => {
   });
 
   it('gives the model examples in the configured language', async () => {
-    const prompt = await promptFor('fr');
-    expect(prompt).toContain('Cliquer sur le bouton Submit');
+    const prompt = await promptFor('pl');
+    expect(prompt).toContain('Kliknąć przycisk Submit');
     expect(prompt).not.toContain('Click the Submit button');
   });
 
   it('writes the language instruction in that language too', async () => {
-    expect(await promptFor('de')).toContain('WICHTIG');
+    expect(await promptFor('pl')).toContain('WAŻNE');
   });
 
   it('appends no language instruction for English', async () => {

@@ -52,7 +52,7 @@ describe('buildRewritePrompt', () => {
   });
 
   it('appends a language suffix for non-English locales', () => {
-    expect(buildRewritePrompt('Click Save', 'Make it shorter.', 'fr')).toContain('en français');
+    expect(buildRewritePrompt('Click Save', 'Make it shorter.', 'pl')).toContain('po polsku');
   });
 
   it('appends nothing for English', () => {

@@ -1,24 +1,12 @@
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import 'dayjs/locale/es';
-import 'dayjs/locale/pt-br';
-import 'dayjs/locale/fr';
-import 'dayjs/locale/de';
-import 'dayjs/locale/zh-cn';
-import 'dayjs/locale/ru';
+import 'dayjs/locale/pl';
 import { i18n } from '@mimik/core/env';
 
 dayjs.extend(relativeTime);
 
 const DAYJS_LOCALE_MAP: Record<string, string> = {
-  es: 'es',
-  'pt-BR': 'pt-br',
-  pt: 'pt-br',
-  fr: 'fr',
-  de: 'de',
-  'zh-CN': 'zh-cn',
-  zh: 'zh-cn',
-  ru: 'ru',
+  pl: 'pl',
 };
 
 export function getDayjsLocale(): string | undefined {

@@ -1,5 +1,6 @@
 import { generateText } from 'ai';
 import { localStorage } from '@/core/env';
+import { defaultAiLanguage } from './default-ai-language';
 import { formatExamples, resolveExamples } from './examples';
 import { getLanguageSuffix, STEP_DESCRIPTION_PROMPT } from './prompts';
 import { createModel } from './provider';
@@ -14,7 +15,7 @@ export async function getAIDescription(
   template = STEP_DESCRIPTION_PROMPT,
 ): Promise<string | null> {
   const settings = await localStorage.get(['aiLanguage']);
-  const locale = (settings.aiLanguage as string) || 'en';
+  const locale = (settings.aiLanguage as string) || defaultAiLanguage();
   const prompt = template
     .replace('{{examples}}', formatExamples(resolveExamples(locale).steps))
     .replace('{{context}}', () => context);

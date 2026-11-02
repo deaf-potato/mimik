@@ -17,8 +17,7 @@ describe('resolveExamples', () => {
   });
 
   it('matches a regional locale to its base language', () => {
-    expect(resolveExamples('fr-CA')).toBe(resolveExamples('fr'));
-    expect(resolveExamples('pt')).toBe(resolveExamples('pt-BR'));
+    expect(resolveExamples('pl-PL')).toBe(resolveExamples('pl'));
   });
 
   it('falls back to English for an unknown locale', () => {

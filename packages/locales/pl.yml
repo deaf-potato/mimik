@@ -1,0 +1,825 @@
+meta:
+  locale: pl
+
+app:
+  name: Mimik
+  store_title: "Mimik: instrukcje krok po kroku"
+  description: "Nagraj dowolny proces w przeglądarce jako instrukcję krok po kroku. Edytuj, dodaj lektora, eksportuj do wideo, PDF lub DOCX."
+
+common:
+  loading: Wczytywanie…
+  cancel: Anuluj
+  save: Zapisz
+  delete: Usuń
+  back: Wstecz
+  continue: Dalej
+  skip: Pomiń
+  export: Eksportuj
+  close: Zamknij
+  undo: Cofnij
+  star: Oznacz gwiazdką
+  unstar: Usuń gwiazdkę
+  restore: Przywróć
+  updated: "Zaktualizowano do v$1"
+  whatsNew: Zobacz, co nowego
+
+sidepanel:
+  connected: Połączono
+  connecting: Łączenie…
+  heroTitle: Co chcesz nagrać?
+  heroSubtitle: Nagraj dowolny proces automatycznie
+  searchPlaceholder: Szukaj instrukcji…
+  recentLabel: Ostatnie
+  notRecordable: Otwórz stronę, żeby zacząć nagrywanie
+
+library:
+  noGuidesTitle: Nie ma jeszcze instrukcji
+  noGuidesSub: Zacznij nagrywanie, żeby utworzyć pierwszą instrukcję
+  noStarredTitle: Brak instrukcji z gwiazdką
+  noStarredSub: Oznacz instrukcję gwiazdką, żeby szybko ją znaleźć
+  trashEmptyTitle: Kosz jest pusty
+  trashEmptySub: Czyściutko!
+  noMatchingGuides: Brak pasujących instrukcji
+  moveToTrash: Przenieś do kosza
+  deletePermanently: Usuń na zawsze
+  openInFullView: Otwórz w pełnym widoku
+  openDashboard: "Otwórz panel"
+  openDashboardHint: "Tam przeglądasz, importujesz i eksportujesz instrukcje"
+  duplicate: Duplikuj
+  copyOfTitle: "Kopia: $1"
+  duplicateFailed: Nie udało się zduplikować instrukcji
+  collapseSidebar: Zwiń pasek boczny
+  expandSidebar: Rozwiń pasek boczny
+  allGuides: "Wszystkie instrukcje"
+  starred: Z gwiazdką
+  trash: Kosz
+  searchPlaceholder: Szukaj instrukcji…
+
+guideme:
+  live: Na żywo
+  roadblock: "Nie można znaleźć tego kroku na stronie. Wykonaj go samodzielnie, żeby kontynuować."
+  manualStep: "Edytowanych kroków nie da się wykryć. Kliknij Dalej, gdy go wykonasz."
+  stepOf: "Krok $1 z $2"
+  noDescription: Brak opisu
+  prev: Wstecz
+  next: Dalej
+  finish: "Zakończ"
+  exitTitle: Wychodzisz?
+  exitMessage: "Przewodnik i jego nakładka na stronie zostaną zamknięte."
+  stay: Zostań
+  exit: Wyjdź
+  guideNotFound: Nie znaleziono instrukcji
+
+guidemeCompletion:
+  title: "Gotowe, świetna robota!"
+  stepsCompleted: "Wykonano $1 krok."
+  stepsCompletedPlural: "Wykonano wszystkie kroki: $1."
+  allDone: "Gotowe"
+  runAgain: "Uruchom ponownie"
+
+recording:
+  capturePaused: Nagrywanie wstrzymane
+  capturePausedBlur: Tryb rozmywania · nagrywanie wstrzymane
+  pauseCapture: Wstrzymaj nagrywanie
+  resumeCapture: Wznów nagrywanie
+  recording: "Nagrywanie \xB7 kroki: $1"
+  recordingPlural: "Nagrywanie \xB7 kroki: $1"
+  readyTitle: "Gotowy do nagrywania"
+  readySub: Kliknij na stronie, żeby zacząć
+  finishRecording: "Zakończ nagrywanie"
+  finish: Zakończ
+  smartBlur: "Inteligentne rozmycie"
+  discard: Odrzuć
+  deleteStep: Usuń krok
+  justNow: Przed chwilą
+  secondsAgo: "$1 s temu"
+  minutesAgo: "$1 min temu"
+
+settings:
+  cardKeyboard: "Pisanie i klawisze"
+  cardKeyboardHint: "Co Twoja klawiatura dodaje do instrukcji."
+  shortcutsHint: "Działają na każdej stronie, którą przeglądasz."
+  shortcutsChange: "Zmień w przeglądarce"
+  shortcutRecordHint: "Startuje na karcie, którą masz przed sobą."
+  shortcutPauseHint: "Podczas nagrywania."
+  shortcutCaptureHint: "Zapisuje ekran jako krok bez klikania, np. dla otwartych menu."
+  shortcutNotSet: "Nie ustawiono"
+  shortcutsChangeNote: "Przeglądarka trzyma skróty na osobnej stronie."
+  recordKeys: "Nagrywaj skróty i nazwane klawisze"
+  recordKeysHint: "Ctrl+S, Enter i podobne stają się krokami."
+  recordTyping: "Nagrywaj to, co piszesz"
+  recordTypingHint: "Wszystko, co wpiszesz w jedno pole, staje się jednym krokiem."
+  microphoneAccess: "Dostęp do mikrofonu"
+  microphoneAccessAsk: "Przeglądarka zapyta raz, zanim Mimik będzie Cię słyszeć."
+  microphoneAccessAllow: "Zezwól"
+  title: Ustawienia
+  aiDescriptions: "Opisy kroków"
+  aiDescriptionsHint: "Mimik pisze tekst każdego kroku i nazywa instrukcję przez Twojego dostawcę AI."
+  aiUseFor: "Używaj AI do"
+  aiForSteps: "Opisów kroków"
+  aiForStepsHint: "Tekst pod każdym zrzutem ekranu."
+  aiForGuide: "Tytułu i podsumowania instrukcji"
+  aiForGuideHint: "Pisane po zakończeniu nagrywania."
+  aiUnusedNote: "Kroki zachowują podstawowe tytuły, a instrukcja dostaje nazwę od strony lub aplikacji. Lektor i komentarz głosowy nadal używają Twojego klucza."
+  provider: Dostawca
+  model: Model
+  modelCustom: Własny model
+  baseUrl: Adres bazowy
+  ownServerHintOpenai: "Działa z Ollama, LM Studio, vLLM i każdym serwerem zgodnym z OpenAI."
+  ownServerHintAnthropic: "Działa z proxy LiteLLM i każdym serwerem zgodnym z Anthropic."
+  apiKey: "Klucz API"
+  showKey: Pokaż klucz
+  hideKey: Ukryj klucz
+  clearKey: Wyczyść klucz
+  aiLanguage: "Język opisów"
+  apiKeys: "Klucze API"
+  aiSection: "AI"
+  ownServer: "Własny serwer"
+  optional: "Opcjonalnie"
+  serverSpeaks: "Zgodny z"
+  protocolOpenai: "OpenAI"
+  protocolAnthropic: "Anthropic"
+  noServer: "Nie podano jeszcze adresu serwera."
+  noKeyFor: "Brak klucza $1."
+  addOneInKeys: "Dodaj go w Kluczach API."
+  addKey: "Dodaj klucz"
+  noKey: "Brak klucza"
+  voiceover: "Lektor w filmie"
+  voiceoverHint: "Mimik czyta tekst każdego kroku w wyeksportowanym filmie."
+  voice: "Głos"
+  voiceNarrationHint: "Opowiadaj, co robisz, a Mimik napisze każdy krok na podstawie Twoich słów."
+  voiceNarration: "Komentarz głosowy"
+  aiNoKey: "Bez klucza API kroki dostają proste opisy tworzone według reguł."
+  microphone: Mikrofon
+  microphoneDefault: Domyślny systemowy
+  microphoneNeedsAccess: Zezwól na dostęp do mikrofonu, żeby zobaczyć nazwy urządzeń.
+  microphoneGrantAccess: Zezwól na dostęp do mikrofonu
+  microphoneNone: "Nie znaleziono mikrofonu. Podłącz go, żeby pojawił się tutaj."
+  microphoneUnavailable: Niedostępny mikrofon
+  microphoneMissing: "Wybrany mikrofon nie jest podłączony. Używam domyślnego systemowego."
+  microphoneTest: Testuj mikrofon
+  microphoneStatusAllowed: Dozwolony
+  microphoneStatusBlocked: Zablokowany
+  microphoneStatusPending: Jeszcze niedozwolony
+  microphoneBlocked: "Mikrofon zablokowany. Kliknij ikonę po lewej stronie paska adresu i ustaw Mikrofon na Zezwalaj."
+  microphoneUnblockHow: Jak go odblokować?
+  microphoneTestStop: Zatrzymaj test
+  microphoneTestFailed: "Nie udało się otworzyć tego mikrofonu. Spróbuj innego."
+  targetColor: "Podświetlenie kliknięcia"
+  brandColor: "Kolor marki"
+  targetColorHint: "Obrys rysowany wokół tego, co kliknięto."
+  brandColorHint: "Akcenty w eksportowanych instrukcjach."
+  branding: "Marka w eksporcie"
+  logoAndFooter: "Logo i stopka"
+  logoAndFooterHint: "Widoczne w każdej eksportowanej instrukcji."
+  brandLogo: "Logo"
+  uploadLogo: "Wgraj logo"
+  replaceLogo: "Zmień"
+  removeLogo: "Usuń logo"
+  footerLine: "Tekst stopki"
+  footerLinePlaceholder: "np. Poufne · Tylko do użytku wewnętrznego"
+  footerPresetConfidential: "Poufne · Tylko do użytku wewnętrznego"
+  footerPresetNoDistribute: "Nie rozpowszechniać"
+  attribution: 'Pokazuj "Zrobione w Mimik"'
+  saveSettings: "Zapisz ustawienia"
+  saved: Zapisano
+  validatingKey: "Sprawdzanie klucza…"
+  keyValid: Klucz API zweryfikowany.
+  keyChecking: "Sprawdzanie…"
+  keyVerified: "Zweryfikowany"
+  keyRejected: "Odrzucony"
+  keyOffline: "Niedostępny"
+  keyCheckModel: "Sprawdź model"
+  keyInvalid: "Dostawca odrzucił ten klucz. Sprawdź go i spróbuj ponownie."
+  keyModelRequired: Wybierz model przed sprawdzeniem klucza.
+  keyModelInvalid: Wybrany model nie jest dostępny u tego dostawcy.
+  checkKey: Sprawdź klucz
+  keyCannotSpend: "Ten klucz nie ma środków. Zadziałają tylko darmowe modele."
+  keyUnreachable: "Nie udało się połączyć z dostawcą. Sprawdź połączenie."
+  modelsFound: "Dostępne modele: $1"
+  smartBlur: "Inteligentne rozmycie"
+  version: "Wersja $1"
+  reportBug: "Zgłoś błąd"
+  aboutSection: "O aplikacji"
+  appearance: "Wygląd"
+  appearanceHint: "Jasny, ciemny albo taki jak w systemie."
+  themeSystem: "Systemowy"
+  themeLight: "Jasny"
+  themeDark: "Ciemny"
+  starCtaTitle: "Podoba Ci się?"
+  starCtaMessage: "Gwiazdka na GitHubie pomaga innym znaleźć Mimik."
+  starOnGithub: Daj gwiazdkę na GitHubie
+
+blurPresets:
+  email: Email
+  phoneNumbers: "Numery telefonów"
+  ssn: PESEL / SSN
+  creditCard: "Karta płatnicza"
+  ipAddress: "Adres IP"
+  macAddress: "Adres MAC"
+
+desktop:
+  collapse: "Zwiń"
+  expand: "Rozwiń"
+  starting: "Uruchamianie…"
+  capturingStep: "Nagrywanie kroku $1"
+  tipArmed: "Każde kliknięcie zapisuje się jako krok."
+  tipPaused: "Podczas pauzy nic nie jest nagrywane."
+  tipWaiting: "Twoje pierwsze kliknięcie pojawi się tutaj."
+  tipLabel: "Wskazówka:"
+  hintStartStop: "możesz nacisnąć $1, żeby zacząć i zakończyć."
+  hintCapture: "możesz nacisnąć $1, żeby zapisać krok bez klikania."
+  micAccessAsk: "macOS zapyta raz, zanim Mimik będzie Cię słyszeć."
+  micAccessRefused: "Odmówiono. Włącz Mimik w Prywatność i ochrona."
+  armed: Gotowy
+  screenshotDelay: Opóźnienie zrzutu
+  keepClicksBeyondArea: Nagrywaj kliknięcia poza obszarem
+  keepClicksBeyondAreaHint: "W trybie Obszar kliknięcia poza obszarem też stają się krokami, w kadrze obszaru."
+  guideInApp: "Instrukcja w $1"
+  capturingSection: Nagrywanie
+  milliseconds: ms
+  captureMode: Co nagrywać
+  modeWindow: Okno
+  modeScreen: Ekran
+  modeArea: Obszar
+  drawArea: "Przeciągnij, żeby zaznaczyć obszar nagrywania"
+  startSheetTitle: Rozpocznij nagrywanie
+  permissionsTitle: "Pozwól Mimikowi nagrywać"
+  permissionsIntro: "Mimik potrzebuje dwóch uprawnień, zanim zacznie nagrywać."
+  permissionAccessibility: "Dostępność"
+  permissionAccessibilityHint: "Pozwala Mimikowi widzieć, co klikasz i wpisujesz."
+  permissionScreen: "Nagrywanie ekranu"
+  permissionScreenHint: "Pozwala Mimikowi robić zrzut ekranu dla każdego kroku."
+  permissionScreenRestart: "Uruchom Mimik ponownie, żeby dokończyć włączanie."
+  permissionRestart: "Uruchom Mimik ponownie"
+  moreStepsAfter: "Nowe kroki zostaną wstawione po kroku $1."
+  moreStepsFirst: "Nowe kroki zostaną wstawione przed krokiem 1."
+  startButton: Start
+  shortcutsSection: "Skróty"
+  generalSection: "Ogólne"
+  appLanguage: "Język aplikacji"
+  appLanguageHint: "Język ekranów Mimika. Opisy kroków mają osobne ustawienie języka."
+  languageSystem: "Taki jak w systemie"
+  cardLanguage: "Język"
+  cardStartup: "Uruchamianie"
+  cardUpdates: "Aktualizacje"
+  startAtLogin: "Uruchamiaj przy logowaniu"
+  startAtLoginHint: "Mimik otwiera się w zasobniku, bez okna."
+  startAtLoginHintMac: "Mimik otwiera się po zalogowaniu."
+  version: "Wersja $1"
+  versionHint: "Mimik sprawdza aktualizacje przy każdym uruchomieniu."
+  checkUpdates: "Sprawdź aktualizacje"
+  trayQuit: "Zamknij Mimik"
+  trayRecording: "Mimik nagrywa. Kliknij, żeby zakończyć."
+  cannotRecord: "Mimik nie może nagrywać"
+  updateReady: "Aktualizacja gotowa"
+  updateReadyMessage: "Mimik $1 jest gotowy do instalacji."
+  restartNow: "Uruchom ponownie teraz"
+  later: "Później"
+  updateFailed: "Nie udało się sprawdzić aktualizacji"
+  updateFailedMessage: "Mimik nie mógł połączyć się z serwerem aktualizacji. Spróbuj później."
+  upToDate: "Aktualny"
+  upToDateMessage: "Mimik $1 jest aktualny."
+  cardScreenshots: "Zrzuty ekranu"
+  cardGlobalKeys: "Klawisze globalne"
+  cardGlobalKeysHint: "Działają w każdej aplikacji, gdy Mimik jest uruchomiony."
+  zoomLevel: "Przybliżenie do kliknięcia"
+  zoomLevelHint: "Nowe nagrania zaczynają od tej wartości. Automatycznie utrzymuje każdy krok w tym samym rozmiarze."
+  zoomAuto: "Automatycznie"
+  zoomGuide: "Przybliżenie"
+  typingDebounce: "Zamknij krok pisania po"
+  typingDebounceHint: "Przerwa tej długości kończy krok pisania."
+  cardScreenshotsHint: "Co pokazuje zrzut ekranu każdego kroku."
+  captureModeHint: "Okno podąża za aplikacją, którą klikasz."
+  screenshotDelayHint: "Odczekaj przed zrobieniem zrzutu, dla menu z animacją."
+  seconds: "s"
+  shortcutRecord: "Rozpocznij lub zakończ nagrywanie"
+  shortcutPause: "Wstrzymaj lub wznów"
+  shortcutCapture: "Zapisz krok teraz"
+  shortcutPress: "Naciśnij klawisze…"
+  shortcutClear: "Wyczyść"
+
+guide:
+  guideMe: "Prowadź mnie"
+  untitled: "Instrukcja bez tytułu"
+  writingTitle: Piszę tytuł na podstawie nagranych kroków...
+  writingDescription: "Piszę opis…"
+  notFound: "Nie znaleziono instrukcji"
+  stepCount: "$1 krok"
+  stepCountPlural: "Kroki: $1"
+  pageOf: "$1 / $2"
+  onDomain: "Instrukcja na $1"
+  newGuide: "Nowa instrukcja"
+
+sort:
+  recentFirst: Najnowsze najpierw
+  oldestFirst: Najstarsze najpierw
+  alphaAZ: "A–Z"
+  mostSteps: Najwięcej kroków
+  gridView: Widok siatki
+  listView: Widok listy
+
+search:
+  recent: "Ostatnie"
+  results: "Instrukcje: $1"
+  resultsOne: "1 instrukcja"
+  noMatch: "Brak instrukcji pasujących do „$1”"
+  noMatchHint: "Spróbuj słowa z tytułu instrukcji."
+  noGuidesYet: Nie ma jeszcze instrukcji
+
+confirmDelete:
+  title: "Usunąć instrukcję?"
+  message: Instrukcja zostanie usunięta na zawsze. Tego nie da się cofnąć.
+  confirm: Usuń na zawsze
+
+editor:
+  backToLibrary: Wróć do biblioteki
+  openInDashboard: Otwórz
+  openInDashboardHint: Otwórz w panelu, żeby edytować lub eksportować
+  guideMe: "Prowadź mnie"
+  guideMeUnavailable: Ta instrukcja nie ma kroków do odtworzenia
+  deleteThisStep: "Usunąć ten krok?"
+  selectStep: Zaznacz krok
+  selectedCount: "Zaznaczone: $1"
+  deleteSelectedStep: "Usunąć $1 zaznaczony krok?"
+  deleteSelectedSteps: "Usunąć zaznaczone kroki ($1)?"
+  copyScreenshot: Kopiuj zrzut ekranu
+  noScreenshot: Brak zrzutu ekranu
+  edit: Edytuj
+  done: Gotowe
+  versionHistory: Historia wersji
+  moreActions: Więcej akcji
+  generateDescription: Wygeneruj opis
+  regenerateDescription: Wygeneruj opis ponownie
+  generatingDescription: "Generowanie…"
+  descriptionPlaceholder: Dodaj opis
+  descriptionErrorNoApiKey: "Dodaj klucz API do AI w Ustawieniach, żeby generować opisy."
+  descriptionErrorNoSteps: "Ta instrukcja nie ma opisanych kroków do podsumowania."
+  descriptionErrorFailed: Nie udało się wygenerować opisu. Spróbuj ponownie.
+  descriptionErrorSaveFailed: "Nie udało się zapisać nowego opisu. Spróbuj ponownie."
+  writingStepDescription: "Piszę opis…"
+  transcribingStepDescription: "Spisuję, co powiedziałeś…"
+  rewriteAskAi: Zapytaj AI
+  rewritePlaceholder: "Napisz AI, jak zmienić ten tekst…"
+  rewriteEnter: Enter
+  rewriteShorter: Krócej
+  rewriteDetail: Więcej szczegółów
+  rewriteGrammar: Popraw gramatykę
+  rewriteFormal: Bardziej formalnie
+  rewriteCasual: Mniej formalnie
+  rewriteReplace: Zastąp
+  rewriteDiscard: Odrzuć
+  rewriteErrorNoApiKey: "Dodaj klucz API do AI w Ustawieniach, żeby przepisywać tekst."
+  rewriteErrorFailed: Nie udało się przepisać zaznaczenia. Spróbuj ponownie.
+  rewriteErrorStale: Tekst się zmienił. Zaznacz go jeszcze raz.
+  restoreSpoken: Przywróć to, co powiedziałeś
+
+capture:
+  recordSteps: Nagraj kroki
+  moreStepsTitle: Nagraj więcej kroków
+  moreStepsBody: Nowe kroki zostaną wstawione tutaj. Wybierz kartę do nagrywania.
+  newCaptureBody: Wybierz kartę do nagrywania.
+  startCapture: Rozpocznij nagrywanie
+  noRecordableTabs: W tym oknie nie ma kart, które można nagrać.
+
+blocks:
+  add: Dodaj blok
+  heading: Nagłówek
+  callout: Notatka
+  headingPlaceholder: Tytuł sekcji
+  calloutPlaceholder: Napisz notatkę
+  deleteHeading: "Usunąć ten nagłówek?"
+  deleteCallout: "Usunąć tę notatkę?"
+  variantInfo: Informacja
+  variantWarning: Ostrzeżenie
+  variantError: Błąd
+  variantSuccess: Sukces
+  variantCustom: Własny
+
+history:
+  title: "Historia wersji"
+  current: Bieżąca
+  restore: Przywróć
+  unchangedVersions: "Niezmienione wersje ($1)"
+  readOnlyBanner: "Oglądasz wcześniejszą wersję. Zamknij historię wersji, żeby wrócić."
+  loadError: Nie udało się wczytać historii wersji. Spróbuj ponownie.
+  restoreError: Nie udało się przywrócić. Spróbuj za chwilę.
+  storageFull: Za mało miejsca na zapis punktu cofania. Usuń jakąś instrukcję i spróbuj ponownie.
+  empty: "Nie ma jeszcze wcześniejszych wersji. Edytuj instrukcję, żeby powstała."
+  nameVersion: Nazwij tę wersję
+  namePlaceholder: Nazwa wersji
+  allVersions: Wszystkie wersje
+  namedOnly: Tylko nazwane wersje
+  emptyNamed: "Nie ma jeszcze nazwanych wersji."
+  renameError: Nie udało się zapisać nazwy. Spróbuj ponownie.
+  changeTitle: Zmieniono tytuł
+  changeStepAdded: "Dodano krok ($1)"
+  changeStepsAdded: "Dodano kroki: $1"
+  changeStepRemoved: "Usunięto krok ($1)"
+  changeStepsRemoved: "Usunięto kroki: $1"
+  changeStepEdited: "Edytowano krok ($1)"
+  changeStepsEdited: "Edytowano kroki: $1"
+  changeStepReordered: Zmieniono kolejność kroków
+  changeLink: "Zmieniono link ($1)"
+  changeLinks: "Zmieniono linki: $1"
+  changeImageReplaced: "Podmieniono obraz ($1)"
+  changeImagesReplaced: "Podmieniono obrazy: $1"
+  changeImageCropped: "Przycięto obraz ($1)"
+  changeImagesCropped: "Przycięto obrazy: $1"
+  changeImageAnnotated: "Dodano adnotacje do obrazu ($1)"
+  changeImagesAnnotated: "Dodano adnotacje do obrazów: $1"
+  changeImageBlurred: "Rozmyto obraz ($1)"
+  changeImagesBlurred: "Rozmyto obrazy: $1"
+  changeAltText: Edytowano tekst alternatywny
+
+emptyGuide:
+  title: Ta instrukcja jest pusta
+  subtitle: "Nagraj kroki, żeby ją wypełnić"
+
+blurPanel:
+  title: "Inteligentne rozmycie"
+  manualMode: "Tryb ręczny"
+  selectElements: Wybierz elementy do rozmycia
+  clickToBlur: "Kliknij, żeby rozmyć"
+  done: Gotowe
+  doneResume: "Gotowe · Wznów nagrywanie"
+  resetAll: "Resetuj wszystko"
+
+screenshotView:
+  zoomIn: Przybliż
+  zoomOut: Oddal
+  saved: Zapisano
+  editMenu: Edytuj zrzut ekranu
+  downloadEdited: "Edytowany obraz"
+  downloadOriginal: "Oryginalny obraz"
+  edit: "Edytuj"
+  addImage: Dodaj obraz
+  replaceImage: Zmień obraz
+  replaceHint: "Wybierz nowy obraz dla tego kroku"
+  replaceDrop: "Kliknij, żeby wybrać, albo upuść obraz tutaj"
+  replaceFormats: "PNG, JPG lub WebP"
+  download: Pobierz
+  deleteImage: Usuń obraz
+  deleteConfirm: "Usunąć ten zrzut ekranu? Tego nie da się cofnąć."
+  imageDeleted: Usunięto obraz
+  altButton: ALT
+  altLabel: Tekst alternatywny
+  altPlaceholder: Opisz ten obraz dla czytników ekranu
+
+annotationEditor:
+  title: Edytuj zrzut ekranu
+  toolBox: Prostokąt
+  toolArrow: Strzałka
+  toolText: Tekst
+  toolSelect: "Zaznacz"
+  addTarget: "Dodaj cel kliknięcia"
+  toolRedact: Zamaż
+  toolCrop: Przytnij
+  colorLabel: "Kolor"
+  textPlaceholder: Wpisz coś…
+  targetBorder: Styl obramowania
+  modeAnnotate: "Adnotacje"
+  toolLine: "Linia"
+  duplicate: "Duplikuj"
+  toolEllipse: "Elipsa"
+  lineColor: "Kolor linii"
+  fillColor: "Kolor wypełnienia"
+  lineWidth: "Grubość linii"
+  cornerRadius: "Zaokrąglenie rogów"
+  font: "Czcionka"
+  bold: "Pogrubienie"
+  italic: "Kursywa"
+  lineHeight: "Interlinia"
+  width_none: "Bez obrysu"
+  width_xs: "Bardzo cienka"
+  width_sm: "Cienka"
+  width_ms: "Średnio cienka"
+  width_md: "Średnia"
+  width_ml: "Średnio gruba"
+  width_lg: "Gruba"
+  width_xl: "Bardzo gruba"
+  zoom: "Przybliżenie"
+  cropHint: "Przeciągnij, żeby przyciąć, albo przeciągnij róg, żeby zmienić rozmiar"
+  resetCrop: "Resetuj przycięcie"
+  arrowEnd: "Zakończenie strzałki"
+  fontSize: "Rozmiar czcionki"
+  undo: "Cofnij"
+  redo: "Ponów"
+  end_none: "Brak"
+  end_bar: "Kreska"
+  end_arrow: "Strzałka"
+  end_arrow_solid: "Pełna strzałka"
+  end_circle: "Koło"
+  end_circle_solid: "Pełne koło"
+  end_square: "Kwadrat"
+  end_square_solid: "Pełny kwadrat"
+  done: Gotowe
+
+exportPreview:
+  voiceover: "Lektor"
+  voiceoverHint: "Czytaj na głos każdy krok. Kroki czekają, aż lektor skończy."
+  audio: "Dźwięk"
+  audioSilent: "Bez dźwięku"
+  audioNarrated: "Z lektorem"
+  voiceoverNoKey: "Dodaj klucz OpenAI lub ElevenLabs w Ustawieniach, żeby dodać lektora do filmów."
+  videoLength: "Długość filmu $1"
+  videoLengthVoice: "Długość filmu $1 → $2 z lektorem"
+  voiceoverCost: "Klipy: $1 · około $2 znaków do syntezy"
+  voiceoverFailed: "Lektor nie zadziałał. Sprawdź klucz API w Ustawieniach."
+  voiceoverNoAudioCodec: "Film jest bez dźwięku. Ta przeglądarka nie potrafi dodać dźwięku do filmu."
+  voiceoverNoKeySkip: "Film jest bez dźwięku. Dodaj klucz API lektora w Ustawieniach."
+  voiceoverNothingToSay: "Film jest bez dźwięku. Ta instrukcja nie ma tekstu do przeczytania."
+  narrating: "Nagrywanie lektora: krok $1 z $2"
+  preparingVoiceover: "Przygotowywanie lektora"
+  stepDescriptions: "Podpisy kroków"
+  stepDescriptionsHint: "Nanieś tekst kroku na każdą klatkę filmu"
+  stepNumbers: "Numery kroków"
+  stepNumbersHint: "Zaczynaj każdy podpis kroku w filmie i GIF-ie od jego numeru"
+  resolution: "Jakość filmu"
+  gifQuality: "Jakość GIF"
+  gif_low: "Niska"
+  gif_medium: "Średnia"
+  gif_high: "Wysoka"
+  res_720p: "720p"
+  res_1080p: "1080p"
+  title: "Podgląd eksportu"
+  cover: "Strona tytułowa"
+  coverHint: "Osobna pierwsza strona z tytułem i szczegółami"
+  screenshots: "Zrzuty ekranu"
+  screenshotsHint: "Wyłącz, żeby dostać zwarty dokument z samym tekstem"
+  stepUrls: "Linki kroków"
+  stepUrlsHint: "Pokazuj adres strony, na której wykonano krok"
+  imageScale: "Rozmiar zrzutów"
+  scale_small: "Mały"
+  scale_medium: "Średni"
+  scale_large: "Duży"
+  download: "Eksportuj $1"
+  rendering: "Odświeżanie podglądu"
+  videoReady: "Kroki: $1 · około $2 min filmu"
+  videoReadyHint: "Długie instrukcje nie są kodowane automatycznie. Podgląd obejmuje każdy krok."
+  videoGenerate: "Wygeneruj podgląd"
+  modeDocument: "Dokument"
+  modeVideo: "Film"
+  encodingVideo: "Kodowanie podglądu filmu"
+  videoFailed: "Nie udało się utworzyć podglądu filmu"
+  bundle: "Plik Mimik"
+  bundleHint: "Plik .mimik, który ktoś inny może zaimportować i edytować"
+  bundleStripInputs: "Usuń wpisany tekst"
+  bundleStripInputsHint: "Usuwa go z tekstu kroków i linków. Zrzuty ekranu nadal pokazują to, co było na ekranie."
+  bundleUrls: "Szczegółowość linków"
+  url_origin: "Strona"
+  url_path: "Podstrona"
+  url_full: "Pełny"
+  bundleRedactionNote: "Rozmyte obszary są wymazywane z eksportowanych obrazów."
+  bundleTypedWarning: "$1 zrzut ekranu pokazuje wpisany przez Ciebie tekst. Rozmyj go przed udostępnieniem."
+  bundleTypedWarningPlural: "Zrzuty ekranu ($1) pokazują wpisany przez Ciebie tekst. Rozmyj je przed udostępnieniem."
+videoPlayer:
+  stepCount: "Kroki: $1"
+  previousStep: "Poprzedni krok"
+  nextStep: "Następny krok"
+  speed: "Prędkość odtwarzania"
+  mute: "Wycisz"
+  unmute: "Włącz dźwięk"
+  spoken: "Krok z lektorem"
+  play: "Odtwórz"
+  pause: "Pauza"
+  fullscreen: "Pełny ekran"
+  exitFullscreen: "Zamknij pełny ekran"
+
+exportMenu:
+  docx: DOCX
+  html: HTML
+  markdown: Markdown
+  pdf: PDF
+  gif: GIF
+  video: Film
+  cancelProgress: "Anuluj · $1%"
+  bundle: "Plik Mimik"
+
+onboarding:
+  getStarted: Zaczynamy
+  blurTitle: "Inteligentne rozmycie"
+  openMimik: Otwórz Mimik
+  letterHello: "Jeszcze jedno 👋"
+  letterNote: "Wiadomość od zespołu 👋"
+  letterThanks: "Musimy to powiedzieć: $1 W ciągu ostatnich tygodni liczba gwiazdek Mimika na GitHubie wystrzeliła, i to wszystko dzięki Wam. Polecaliście go znajomym, współpracownikom i społecznościom, a my nie możemy wyjść z podziwu."
+  letterThankYou: "dziękujemy."
+  letterWorld: "Najlepsze w tworzeniu Mimika jest patrzenie, jak ludzie na całym świecie go używają. Mamy nadzieję, że nadal oszczędza Ci czas i pieniądze, a Twoje dane zostają tam, gdzie ich miejsce: u Ciebie. Masz pomysł, prośbę o funkcję albo uwagi? $1. Czytamy każdą wiadomość."
+  letterSayHi: "Wpadnij na GitHuba"
+  letterNewsTitle: "🚀 Wielka nowina: Mimik Desktop już jest!"
+  letterNewsBody: "Wszystko, co lubisz we wtyczce Mimik, teraz prosto na Twoim komputerze. Dostępny już dla Windowsa, wersja na Maca wkrótce."
+  letterNewsAction: "Pobierz Mimik Desktop"
+  letterPromiseTitle: "Najpierw obietnica"
+  letterPromise: "Mimik zawsze będzie darmowy i na licencji MIT. Bez haczyków i płatnych blokad w przyszłości. To nasza obietnica dla Ciebie i dla wspaniałej społeczności, która wokół niego rośnie."
+  letterAskTitle: "I mała prośba 🙏"
+  letterAskIntro: "To dzięki Tobie Mimik rośnie, więc pomóż nam dalej:"
+  letterAskWrite: "Napisz o nim na blogu, w newsletterze albo w mediach społecznościowych (szczególnie na Reddicie, kochamy Reddita!)"
+  letterAskVideo: "Nagraj poradnik albo prezentację na YouTube"
+  letterAskFriend: "Powiedz znajomemu lub współpracownikowi, któremu się spodoba"
+  letterSponsor: "Każdy artykuł, film i wzmianka pomaga kolejnym osobom znaleźć Mimik, a my zauważamy i doceniamy każde z nich. Chcesz pójść dalej? Możesz $1. Każde wsparcie, duże czy małe, pomaga projektowi się rozwijać."
+  letterSponsorLink: "wesprzeć Mimik na GitHubie"
+  letterSignoff: "Z wyrazami sympatii,"
+  letterTeam: "Zespół Westpoint ❤️"
+  helloTitle: "Dzięki za instalację Mimika!"
+  helloMessage: "Wykonaj zadanie raz, tak jak zwykle, a Mimik zamieni każde kliknięcie w krok ze zrzutem ekranu. Skonfigurujmy go, zajmie to minutę."
+  chipDevice: "Działa na Twoim urządzeniu"
+  chipAccount: "Bez konta"
+  chipFree: "Darmowy i MIT"
+  loginWelcome: "Witaj ponownie"
+  loginReady: "Mimik jest gotowy"
+  writeTitle: "Jak Mimik ma pisać Twoje kroki?"
+  writeMessage: "Każde kliknięcie staje się krokiem ze zrzutem ekranu. Wybierz, jak ma powstawać jego tekst. Możesz to zmienić w każdej chwili w Ustawieniach."
+  basicTitle: "Proste tytuły"
+  basicMessage: "Jasne tytuły na podstawie tego, co kliknięto. Działa od razu, bez konfiguracji."
+  basicBest: "Najlepsze, żeby od razu wypróbować Mimik"
+  basicExample: "Kliknij \"Płatności\""
+  aiChoiceTitle: "Opisy z AI"
+  aiChoiceMessage: "Pełne zdania od Twojego dostawcy AI, z Twoim własnym kluczem. Odblokowuje też komentarz głosowy."
+  aiChoiceMessageNoVoice: "Pełne zdania od Twojego dostawcy AI, z Twoim własnym kluczem."
+  aiBest: "Najlepsze do instrukcji, które udostępniasz"
+  aiExample: "Otwórz Płatności, żeby zobaczyć faktury i plan"
+  exampleMeta: "Krok 2 · Płatności"
+  keyPrivacy: "Twój klucz zostaje na tym urządzeniu i trafia tylko do wybranego dostawcy."
+  voiceToggleTitle: "Komentarz głosowy"
+  voiceToggleHint: "Mów, co robisz, a Mimik dołączy to do następnego kroku."
+  voiceNeedsKey: "Komentarz używa OpenAI lub Groq do zamiany mowy na tekst. Dodaj klucz do jednego z nich."
+  makeTitle: "Dopasuj do siebie"
+  makeMessage: "Wszystko opcjonalne. Każdą z tych rzeczy zmienisz później w Ustawieniach."
+  brandTitle: "Twoja marka w eksportach"
+  brandHint: "Twoje logo i kolor w każdej eksportowanej instrukcji PDF i HTML."
+  blurHint: "Rozmywaj wrażliwe dane na zrzutach ekranu, zanim cokolwiek opuści Twoje urządzenie."
+  readyTitle: "Możesz zaczynać nagrywanie"
+  readyStepOpen: "Otwórz Mimik"
+  readyStepStart: "Kliknij Rozpocznij nagrywanie"
+  readyStepClick: "Przeklikaj swoje zadanie"
+  readyStepGuide: "Odbierz instrukcję krok po kroku"
+  pinHere: "Przypnij tutaj"
+  pinCardTitle: "Przypnij Mimik, żeby mieć go pod ręką"
+  pinCardMessage: "Kliknij ikonę puzzla obok paska adresu i przypnij Mimik do paska narzędzi."
+  pinMenuTitle: "Rozszerzenia"
+  trayTitle: "Mimik mieszka w zasobniku"
+  trayMessage: "Rozpocznij nagrywanie ikoną Mimika obok zegara albo naciśnij $1 w dowolnej aplikacji."
+  menuBarTitle: "Mimik mieszka na pasku menu"
+  menuBarMessage: "Rozpocznij nagrywanie ikoną Mimika u góry ekranu albo naciśnij $1 w dowolnej aplikacji."
+  starCardTitle: "Darmowy i MIT, na zawsze"
+  starCardMessage: "Bez konta i płatnych blokad. Gwiazdka na GitHubie pomaga innym znaleźć Mimik."
+  demoApp: "Acme Admin"
+  demoTitle: "Zaproś współpracownika"
+  demoField: "Email"
+  demoButton: "Wyślij zaproszenie"
+  demoStepType: "Wpisz \"ana@acme.com\" w polu Email"
+  demoStepClick: "Kliknij \"Wyślij zaproszenie\""
+  demoPlusStep: "+1 krok"
+  demoGuideMeta: "2 kroki · przed chwilą"
+
+steps:
+  pressKey: 'Naciśnij $1 na "$2"'
+  toggleCheckbox: 'Przełącz "$1"'
+  select: 'Wybierz "$1"'
+  enter: 'Wpisz "$1"'
+  toggleSwitch: 'Przełącz "$1"'
+  clickLink: 'Kliknij link "$1"'
+  click: 'Kliknij "$1"'
+  clickHere: "Kliknij tutaj"
+  rightClick: 'Kliknij prawym przyciskiem "$1"'
+  rightClickHere: "Kliknij tutaj prawym przyciskiem"
+  typeIntoField: 'Wpisz w pole $1 "$2"'
+  typeInto: 'Wpisz w "$1"'
+  type: 'Wpisz "$1"'
+  typeSecret: "Wpisz hasło"
+  copyFrom: 'Skopiuj z "$1"'
+  pasteInto: 'Wklej do "$1"'
+  cutFrom: 'Wytnij z "$1"'
+  drag: 'Przeciągnij "$1"'
+  typeValueInto: 'Wpisz "$1" w polu $2'
+  clearField: "Wyczyść pole $1"
+  textField: "tekstowe"
+  navigate: Przejdź na stronę
+  defaultAction: "$1 $2"
+
+export:
+  guideLabel: "INSTRUKCJA"
+  endLabel: "KONIEC INSTRUKCJI"
+  stepsRange: "Kroki $1–$2 z $3"
+  stepOf: "Krok $1 z $2"
+  madeWith: "Zrobione w Mimik"
+  created: Utworzono
+  source: Źródło
+  step: Krok
+  steps: Kroki
+  stepLabel: "Krok $1"
+  stepsCount: "Kroki: $1"
+  createdLabel: "Utworzono $1"
+  sourceLabel: "Źródło: $1"
+
+voice:
+  turnOn: Włącz komentarz głosowy
+  turnOff: Wyłącz komentarz głosowy
+  needsApiKey: "Komentarz wymaga klucza API"
+  pausedWithCapture: Komentarz jest wstrzymany razem z nagrywaniem
+  micStarting: Uruchamianie mikrofonu…
+  micHearing: Słyszę Cię
+  micQuiet: Brak dźwięku
+  nextRecording: Komentarz głosowy jest włączony i ruszy z następnym nagraniem.
+  orderHint: Powiedz, co zaraz zrobisz, a potem to zrób. Twoje słowa trafią do następnej akcji.
+  transcribing: Spisywanie komentarza…
+  transcribingHint: "Opisy kroków zaktualizują się, gdy skończy."
+  narrated: "Dodano komentarz do $1 kroku."
+  narratedPlural: "Dodano komentarz do kroków: $1."
+  narratedNone: "Żaden fragment komentarza nie pasował do kroku."
+  guideSafe: "Twoja instrukcja i zrzuty ekranu są nienaruszone."
+  openSettings: Otwórz ustawienia
+  errorPermissionDenied: "Dostęp do mikrofonu został zablokowany."
+  errorNoDevice: "Nie znaleziono mikrofonu."
+  errorNoAudio: "Mikrofon nie wychwycił żadnego dźwięku."
+  errorMissingApiKey: "Komentarz wymaga klucza API do transkrypcji."
+  errorStreamEnded: "Mikrofon wyłączył się w trakcie."
+  errorNotRecording: "Komentarz nie był włączony."
+  errorAlreadyRecording: "Komentarz był już włączony."
+  errorUnsupported: Ta przeglądarka nie potrafi nagrywać komentarza głosowego.
+  errorUnknown: "Komentarz nieoczekiwanie się zatrzymał."
+
+micPermission:
+  title: Zezwól na dostęp do mikrofonu
+  checkingMessage: "Sprawdzanie dostępu do mikrofonu…"
+  promptingMessage: "Wybierz Zezwól w okienku przeglądarki. Ta karta zamknie się sama."
+  grantedTitle: Mikrofon gotowy
+  grantedMessage: "Wracamy."
+  deniedTitle: Dostęp do mikrofonu jest zablokowany
+  deniedMessage: "Kliknij ikonę po lewej stronie paska adresu, ustaw Mikrofon na Zezwalaj i spróbuj ponownie."
+  retry: Spróbuj ponownie
+  privacy: "Dźwięk trafia do Twojego dostawcy transkrypcji. Mimik nigdy go nie przechowuje."
+
+aiStatus:
+  rejected: "$1 odrzucił Twój klucz API."
+  noCredits: "Twoje konto $1 nie ma środków."
+  rateLimited: "$1 ogranicza liczbę zapytań Mimika."
+  modelInvalid: "$1 nie udostępnia tego modelu na Twoim koncie."
+  quota: "To zapytanie było za duże dla tego modelu."
+  network: "Mimik nie mógł połączyć się z $1."
+  unknown: "$1 odrzucił zapytanie."
+  actionCheckKey: "Sprawdź klucz w Ustawieniach."
+  actionAddCredits: "Doładuj środki i sprawdź klucz ponownie."
+  actionWait: "Odczekaj chwilę, zanim nagrasz więcej."
+  actionPickModel: "Wybierz inny model w Ustawieniach."
+  actionConnection: "Sprawdź połączenie."
+
+stepSource:
+  ai: "AI"
+  voice: "Głos"
+  basic: "Prosty"
+  edited: "Edytowany"
+  hint: "Skąd pochodzi ten opis"
+
+import:
+  title: "Importuj instrukcję"
+  dialogDescription: "Przejrzyj plik instrukcji przed dodaniem go do biblioteki"
+  button: "Importuj"
+  dropHere: "Upuść plik .mimik, żeby go zaimportować"
+  reading: "Odczytywanie pliku"
+  confirm: "Dodaj do biblioteki"
+  cancel: "Anuluj"
+  guideMeHint: "Nagrano na $1. Prowadź mnie działa tylko na tej stronie."
+  noteRedacted: "Rozmyte obszary zostały usunięte przez autora i nie da się ich przywrócić."
+  noteInputs: "Tekst wpisany w pola został pominięty."
+  noteUrls: "Linki skrócono do adresu podstrony."
+  noteUrlsOrigin: "Linki skrócono do adresu strony."
+  errorUnreadable: "Nie udało się otworzyć pliku. Może być uszkodzony lub niekompletny."
+  errorNotABundle: "To nie jest plik Mimik. Wybierz plik wyeksportowany z Mimika."
+  errorVersion: "Ten plik powstał w nowszym Mimiku. Zaktualizuj Mimik i spróbuj ponownie."
+  errorEmpty: "Ten plik nie zawiera kroków."
+  errorFailed: "Nie udało się zapisać instrukcji w bibliotece. Spróbuj zaimportować ją ponownie."
+transcript:
+  title: Transkrypcja
+  empty: W tym nagraniu nic nie powiedziano.
+  loadError: Nie udało się wczytać transkrypcji. Spróbuj ponownie.
+  filterAll: "Wszystkie ($1)"
+  filterUnused: "Nieużyte ($1)"
+  privacyNote: "Trzymana tylko na tym urządzeniu. Nigdy nie trafia do eksportowanych instrukcji i jest usuwana razem z instrukcją."
+  usedInStep: "Krok $1"
+  readOnlyHint: Włącz Edytuj na górnym pasku, żeby dodać te linie do kroku.
+  notUsed: Nieużyte
+  filteredOut: Odfiltrowane
+  addToStep: "Dodaj do kroku $1"
+  copyAll: Kopiuj wszystko
+  download: Pobierz
+  delete: Usuń transkrypcję
+  confirmDelete: "Usunąć tę transkrypcję? Tego nie da się cofnąć."
+
+stepKind:
+  click: "Kliknięcie"
+  type: "Pisanie"
+  key: "Klawisz"
+  navigate: "Strona"
+  note: "Notatka"
+outline:
+  title: Spis treści
+  untitledStep: Krok bez tytułu
+  moreSelected: "+$1"
+  instructions: Naciśnij Spację, żeby podnieść krok. Przesuwaj go strzałkami, upuść Spacją albo anuluj Escape.
+  pickedUp: "Podniesiono $1"
+  movedOver: "$1 przesunięto nad $2"
+  droppedOver: "$1 upuszczono na $2"
+  dropped: "Upuszczono $1"
+  cancelled: "Anulowano przesuwanie $1"
+  selected: Zaznaczono

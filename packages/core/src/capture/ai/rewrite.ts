@@ -1,6 +1,7 @@
 import { generateText } from 'ai';
 import { localStorage } from '@/core/env';
 import { logger } from '@/core/logger';
+import { defaultAiLanguage } from './default-ai-language';
 import { getLanguageSuffix, REWRITE_PROMPT } from './prompts';
 import { createModel } from './provider';
 import { readAiCredentials } from './read-ai-credentials';
@@ -35,7 +36,7 @@ export async function rewriteSelection(text: string, instruction: string): Promi
   try {
     const { text: raw } = await generateText({
       model: createModel(keys.provider, keys.model, keys.apiKey, keys.baseUrl),
-      prompt: buildRewritePrompt(text, instruction, aiLanguage || 'en'),
+      prompt: buildRewritePrompt(text, instruction, aiLanguage || defaultAiLanguage()),
       maxOutputTokens: 2048,
     });
 
