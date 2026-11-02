@@ -29,8 +29,9 @@ fileAssociations:
     mimeType: application/x-mimik
 publish:
   provider: github
-  owner: westpoint-io
+  owner: deaf-potato
   repo: mimik
+  releaseType: release
 mac:
   category: public.app-category.productivity
   artifactName: ${productName}-${version}-${arch}.${ext}
