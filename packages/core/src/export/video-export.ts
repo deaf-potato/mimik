@@ -32,6 +32,7 @@ import type { Ctx } from '@/core/screenshot/draw';
 import { drawRoundedRect, TARGET_RADIUS, TARGET_STROKE } from '@/core/screenshot/draw';
 import { clamp, resolveFrameViewport, resolveTarget } from '@/core/screenshot/geometry';
 import { renderScreenshot } from '@/core/screenshot/render';
+import { analyzeTypedText, type TypedText, typedTextInset, typingReveal } from './typed-text';
 
 const KEY_FRAME_INTERVAL_SEC = 2;
 
@@ -65,6 +66,14 @@ const RING_PAD = 7;
 const TOOLTIP_DELAY_SEC = 0.37;
 const TOOLTIP_FADE_SEC = 0.28;
 const TOOLTIP_RISE = 8;
+
+const TYPING_CHAR_SEC = 0.07;
+const TYPING_MIN_SEC = 0.5;
+const TYPING_MAX_SEC = 2;
+const CARET_BLINK_SEC = 0.5;
+const CARET_WIDTH_RATIO = 0.08;
+const AVG_CHAR_RATIO = 0.55;
+const COVER_PAD_RATIO = 0.2;
 
 const CURSOR_START_SEC = 0.35;
 const CURSOR_HEIGHT = 23;
@@ -378,6 +387,13 @@ interface ScreenshotLayer {
   ring: { color: string; dashed: boolean } | null;
   from: Point;
   description: string;
+  typing: TypingOverlay | null;
+}
+
+interface TypingOverlay {
+  origin: Point;
+  text: TypedText;
+  characters: number;
 }
 
 interface BlockLayer {
@@ -476,7 +492,79 @@ async function loadScreenshotLayer(step: Step, screenshot: Screenshot, from: Poi
     ring: target ? { color: target.color, dashed: target.border === 'dashed' } : null,
     from: { x: from.x * bitmap.width, y: from.y * bitmap.height },
     description: step.description,
+    typing: null,
   };
+}
+
+function readTyping(step: Step, bitmap: ImageBitmap, field: Rect | null): TypingOverlay | null {
+  if (!field || stepKind(step) !== 'type') return null;
+  const inset = typedTextInset(field);
+  const x = Math.max(0, Math.round(field.x + inset));
+  const y = Math.max(0, Math.round(field.y + inset));
+  const width = Math.min(bitmap.width - x, Math.round(field.width - inset * 2));
+  const height = Math.min(bitmap.height - y, Math.round(field.height - inset * 2));
+  if (width < 4 || height < 4) return null;
+  try {
+    const ctx = new OffscreenCanvas(width, height).getContext('2d', { willReadFrequently: true });
+    if (!ctx) return null;
+    ctx.drawImage(bitmap, x, y, width, height, 0, 0, width, height);
+    const text = analyzeTypedText(ctx.getImageData(0, 0, width, height).data, width, height);
+    if (!text) return null;
+    const typed = step.inputValue?.length ?? 0;
+    const estimated = text.lines.reduce(
+      (sum, line) => sum + (line.x1 - line.x0 + 1) / ((line.y1 - line.y0 + 1) * AVG_CHAR_RATIO),
+      0,
+    );
+    return { origin: { x, y }, text, characters: Math.max(1, typed || Math.round(estimated)) };
+  } catch (error) {
+    logger.warn('Typing overlay skipped', error);
+    return null;
+  }
+}
+
+function typingProgress(frame: number, characters: number, fps = FPS): number {
+  const start = landingFrame(fps) + toFrames(RING_DELAY_SEC + RING_POP_SEC, fps);
+  const span = toFrames(clamp(characters * TYPING_CHAR_SEC, TYPING_MIN_SEC, TYPING_MAX_SEC), fps);
+  if (frame <= start) return 0;
+  if (frame >= start + span) return 1;
+  return (frame - start) / span;
+}
+
+function drawTyping(
+  ctx: Ctx,
+  overlay: TypingOverlay,
+  frame: number,
+  project: (x: number, y: number) => Point,
+  scale: number,
+  fps: number,
+) {
+  const progress = typingProgress(frame, overlay.characters, fps);
+  const { lines, background, ink } = overlay.text;
+  const reveal = typingReveal(lines, overlay.characters, progress);
+  ctx.save();
+  ctx.fillStyle = background;
+  lines.forEach((line, index) => {
+    const from = reveal[index]!;
+    if (from > line.x1) return;
+    const pad = Math.max(2, Math.round((line.y1 - line.y0 + 1) * COVER_PAD_RATIO));
+    const a = project(overlay.origin.x + (from <= line.x0 ? from - pad : from), overlay.origin.y + line.y0 - 1);
+    const b = project(overlay.origin.x + line.x1 + 1 + pad, overlay.origin.y + line.y1 + 2);
+    ctx.fillRect(a.x, a.y, b.x - a.x, b.y - a.y);
+  });
+
+  const typing = progress > 0 && progress < 1;
+  const blinkOn = Math.floor(frame / toFrames(CARET_BLINK_SEC, fps)) % 2 === 0;
+  if (progress > 0 && (typing || blinkOn)) {
+    const at = lines.findIndex((line, index) => reveal[index]! <= line.x1);
+    const index = at < 0 ? lines.length - 1 : at;
+    const line = lines[index]!;
+    const x = Math.min(reveal[index]!, line.x1 + 1);
+    const top = project(overlay.origin.x + x, overlay.origin.y + line.y0 - 1);
+    const lineHeight = (line.y1 - line.y0 + 3) * scale;
+    ctx.fillStyle = ink;
+    ctx.fillRect(top.x + scale, top.y, Math.max(1.5, lineHeight * CARET_WIDTH_RATIO), lineHeight);
+  }
+  ctx.restore();
 }
 
 function releaseLayer(layer: StepLayer) {
@@ -589,6 +677,8 @@ function drawStepFrame(ctx: Ctx, layer: StepLayer, frame: number, device: Size, 
 
   const scale = fit.width / crop.width;
   const project = (x: number, y: number) => ({ x: fit.x + (x - crop.x) * scale, y: fit.y + (y - crop.y) * scale });
+
+  if (layer.typing) drawTyping(ctx, layer.typing, frame, project, scale, fps);
 
   const anchor: Rect = layer.target
     ? {
@@ -796,6 +886,7 @@ export async function composeGuideFrames(
     const layer = isBlock(step)
       ? await loadBlockLayer(step, backdropFor(index))
       : await loadScreenshotLayer(step, screenshots.get(step.id) as Screenshot, cursorOriginFor(index, targetAt));
+    if (layer.kind === 'screenshot') layer.typing = readTyping(step, layer.bitmap, layer.target);
     if (layer.kind === 'screenshot' && !options.stepDescriptions) layer.description = '';
     const number = options.stepNumbers ? numbers.get(step.id) : undefined;
     if (layer.kind === 'screenshot' && number) {
