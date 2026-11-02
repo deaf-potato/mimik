@@ -119,16 +119,16 @@ export function getFieldValue(el: HTMLElement): string {
 }
 
 const READABLE = /[\p{L}\p{N}]/u;
+const REQUIRED_MARK = /^[*\s]+|[\s*:]+$/g;
 
 function meaningfulLabel(text: string | null | undefined): string | null {
   const trimmed = text?.trim();
   if (!trimmed || !READABLE.test(trimmed)) return null;
-  return (
-    trimmed
-      .split('\n')
-      .map((line) => line.trim())
-      .find((line) => READABLE.test(line)) ?? null
-  );
+  const line = trimmed
+    .split('\n')
+    .map((part) => part.trim())
+    .find((part) => READABLE.test(part));
+  return line ? line.replace(REQUIRED_MARK, '').trim() || null : null;
 }
 
 function slottedLabel(el: Element): string | null {
@@ -139,6 +139,15 @@ function slottedLabel(el: Element): string | null {
     meaningfulLabel(host.getAttribute('label')) ??
     meaningfulLabel((host as HTMLElement).textContent)
   );
+}
+
+function referencedLabel(el: HTMLElement): string | null {
+  const ids = el.getAttribute('aria-labelledby')?.split(/\s+/).filter(Boolean) ?? [];
+  const text = ids
+    .map((id) => el.ownerDocument.getElementById(id)?.textContent?.trim())
+    .filter(Boolean)
+    .join(' ');
+  return meaningfulLabel(text);
 }
 
 function rowLabel(el: HTMLElement): string | null {
@@ -155,8 +164,8 @@ export function getFieldLabel(el: HTMLElement): string | null {
   const ariaLabel = el.getAttribute('aria-label');
   if (ariaLabel) return ariaLabel;
 
-  const placeholder = el.getAttribute('placeholder');
-  if (placeholder) return placeholder;
+  const labelledBy = referencedLabel(el);
+  if (labelledBy) return labelledBy;
 
   if (el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement) {
     const labels = el.labels;
@@ -186,6 +195,9 @@ export function getFieldLabel(el: HTMLElement): string | null {
 
   const row = rowLabel(el);
   if (row) return row;
+
+  const placeholder = el.getAttribute('placeholder');
+  if (placeholder) return placeholder;
 
   const name = el.getAttribute('name');
   if (name && !/[-_]test|[-_]id|[-_]key/i.test(name)) return name;

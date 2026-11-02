@@ -24,6 +24,31 @@ describe('naming a field when it is clicked', () => {
     expect(getFieldLabel(el)).toBe('Article');
   });
 
+  it('prefers the visible row label over the placeholder', () => {
+    const el = field(
+      '<div><label><span>*</span> Adres strony</label><input id="field" placeholder="np. twojsalon.pl"></div>',
+    );
+    expect(getFieldLabel(el)).toBe('Adres strony');
+  });
+
+  it('prefers a linked label over the placeholder', () => {
+    const el = field('<label for="field">Customer:</label><input id="field" placeholder="e.g. Acme">');
+    expect(getFieldLabel(el)).toBe('Customer');
+  });
+
+  it('reads the label an aria-labelledby points to', () => {
+    const el = field(
+      '<p id="cap">Website address</p><input id="field" aria-labelledby="cap" placeholder="e.g. acme.com">',
+    );
+    expect(getFieldLabel(el)).toBe('Website address');
+  });
+
+  it('falls back to the placeholder when the field has no label', () => {
+    const el = field('<div><input id="field" placeholder="Search guides"><button>Go</button></div>');
+    painted(document.querySelector('button')!);
+    expect(getFieldLabel(el)).toBe('Search guides');
+  });
+
   it('does not borrow the row text when the row holds another control', () => {
     const el = field('<div>Search<input id="field"><button>Go</button></div>');
     painted(document.querySelector('button')!);
