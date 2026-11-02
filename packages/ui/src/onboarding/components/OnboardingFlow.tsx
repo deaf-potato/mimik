@@ -1,6 +1,6 @@
 import { type ReactNode, useState } from 'react';
 import type { ValidateKey } from '../../ai/types';
-import { MascotIcon } from '../../common/components/MascotIcon';
+import { BrandMark } from '../../common/components/BrandMark';
 import { LetterStep } from './LetterStep';
 import { MakeItYoursStep } from './MakeItYoursStep';
 import { ReadyStep } from './ReadyStep';
@@ -35,7 +35,7 @@ export function OnboardingFlow({
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <header className="flex items-center gap-2 px-6 pt-5 text-[17px] font-bold">
-        <MascotIcon size={32} />
+        <BrandMark size={32} />
         Mimik
       </header>
       <main

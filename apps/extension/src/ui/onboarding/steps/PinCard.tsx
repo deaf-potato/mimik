@@ -1,4 +1,4 @@
-import { DemoCursor, MascotIcon } from '@mimik/ui';
+import { BrandMark, DemoCursor } from '@mimik/ui';
 import { Pin, Puzzle } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { i18n } from '#imports';
@@ -67,7 +67,7 @@ export function PinCard() {
             {i18n.t('onboarding.pinMenuTitle')}
           </p>
           <div className="flex items-center gap-2 rounded-md bg-secondary px-1 py-1.5">
-            <MascotIcon size={20} />
+            <BrandMark size={20} />
             Mimik
             <span className="ml-auto flex items-center gap-1.5">
               <span className="flex size-[18px] items-center justify-center rounded-full bg-primary text-[10px] font-bold text-on-solid">

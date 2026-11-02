@@ -7,6 +7,7 @@ export { useApiKeys } from './ai/hooks/use-api-keys';
 export { useKeyCheck } from './ai/hooks/use-key-check';
 export { BrandingSettings } from './branding/components/BrandingSettings';
 export { AppearanceSettings } from './common/components/AppearanceSettings';
+export { BrandMark } from './common/components/BrandMark';
 export { CameraMascot } from './common/components/CameraMascot';
 export { FaviconImg } from './common/components/FaviconImg';
 export { GitHubCard } from './common/components/GitHubCard';

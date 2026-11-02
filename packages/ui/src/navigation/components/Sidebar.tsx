@@ -1,6 +1,6 @@
 import { i18n } from '@mimik/core/env';
 import { ExternalLink, FileText, PanelLeftClose, PanelLeftOpen, Settings, Star, Trash2, Video } from 'lucide-react';
-import { MascotIcon } from '../../common/components/MascotIcon';
+import { BrandMark } from '../../common/components/BrandMark';
 import { useFullview } from '../../stores/use-fullview';
 import { navigate } from '../lib/navigate';
 import type { Route } from '../types';
@@ -46,7 +46,7 @@ export function Sidebar({
           className="flex items-center gap-2 cursor-pointer"
         >
           <span className="mb-1">
-            <MascotIcon size={22} />
+            <BrandMark size={22} />
           </span>
           {!collapsed && (
             <span className="text-[15px] font-bold tracking-tight text-foreground">{i18n.t('app.name')}</span>
